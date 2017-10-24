@@ -1,0 +1,11 @@
+diff --git a/conf/graphite.wsgi.example b/conf/graphite.wsgi.example
+index 84ac3020..04e4e6ff 100755
+--- a/conf/graphite.wsgi.example
++++ b/conf/graphite.wsgi.example
+@@ -1,4 +1,4 @@
+ import sys
+-sys.path.append('/opt/graphite/webapp')
++sys.path.append('/usr/share/graphite/webapp')
+ 
+ from graphite.wsgi import application
+

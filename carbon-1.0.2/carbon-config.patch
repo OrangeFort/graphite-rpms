@@ -1,0 +1,35 @@
+kdiff --git a/conf/carbon.conf.example b/conf/carbon.conf.example
+index dbccf71..6af336b 100644
+--- a/conf/carbon.conf.example
++++ b/conf/carbon.conf.example
+@@ -21,14 +21,12 @@
+ #   LOG_DIR        = %(STORAGE_DIR)s/log/
+ #   PID_DIR        = %(STORAGE_DIR)s/
+ #
+-# For FHS style directory structures, use:
+-#
+-#   STORAGE_DIR    = /var/lib/carbon/
+-#   CONF_DIR       = /etc/carbon/
+-#   LOG_DIR        = /var/log/carbon/
+-#   PID_DIR        = /var/run/
+-#
+-#LOCAL_DATA_DIR = /opt/graphite/storage/whisper/
++STORAGE_DIR    = /var/lib/carbon/
++LOCAL_DATA_DIR = /var/lib/carbon/whisper/
++WHITELISTS_DIR = /var/lib/carbon/lists/
++CONF_DIR       = /etc/carbon/
++LOG_DIR        = /var/log/carbon/
++PID_DIR        = /var/run/
+ 
+ # Specify the database library used to store metric data on disk. Each database
+ # may have configurable options to change the behaviour of how it writes to
+@@ -48,7 +46,7 @@ ENABLE_LOGROTATION = True
+ # Specify the user to drop privileges to
+ # If this is blank carbon-cache runs as the user that invokes it
+ # This user must have write access to the local data directory
+-USER =
++USER = carbon
+ 
+ # Limit the size of the cache to avoid swapping or becoming CPU bound.
+ # Sorts and serving cache queries gets more expensive as the cache grows.
+

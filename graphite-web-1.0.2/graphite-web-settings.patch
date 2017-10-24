@@ -1,0 +1,32 @@
+kdiff --git a/webapp/graphite/settings.py b/webapp/graphite/settings.py
+index e9604d33..8ee41c3b 100644
+--- a/webapp/graphite/settings.py
++++ b/webapp/graphite/settings.py
+@@ -34,19 +34,20 @@ WEBAPP_DIR = dirname(WEB_DIR)
+ GRAPHITE_ROOT = dirname(WEBAPP_DIR)
+ # Initialize additional path variables
+ # Defaults for these are set after local_settings is imported
+-STATIC_ROOT = ''
++STATIC_ROOT = '/usr/share/graphite/webapp/content/'
+ STATIC_URL = '/static/'
+ URL_PREFIX = ''
+-CONF_DIR = ''
++CONF_DIR = '/etc/graphite-web/'
+ DASHBOARD_CONF = ''
+ GRAPHTEMPLATES_CONF = ''
+-STORAGE_DIR = ''
++STORAGE_DIR = '/var/lib/graphite-web/'
+ WHITELIST_FILE = ''
+ INDEX_FILE = ''
+-LOG_DIR = ''
++LOG_DIR = '/var/log/graphite-web/'
+ CERES_DIR = ''
+-WHISPER_DIR = ''
+-RRD_DIR = ''
++CARBON_DIR = '/var/lib/carbon/'
++WHISPER_DIR = CARBON_DIR + 'whisper/'
++RRD_DIR = CARBON_DIR + 'rrd/'
+ STANDARD_DIRS = []
+ 
+ # Cluster settings
+

@@ -1,0 +1,19 @@
+kdiff --git a/setup.py b/setup.py
+index dae6ee1..4f6c629 100644
+--- a/setup.py
++++ b/setup.py
+@@ -51,9 +51,11 @@ else:
+   setup_kwargs = dict()
+
+
+-storage_dirs = [ ('storage/ceres', []), ('storage/whisper',[]),
+-                 ('storage/lists',[]), ('storage/log',[]),
+-                 ('storage/rrd',[]) ]
++storage_dirs = [
++    ('/var/lib/carbon/whisper',[]),
++    ('/var/lib/carbon/lists',[]),
++    ('/var/lib/carbon/rrd',[])
++]
+ conf_files = [ ('conf', glob('conf/*.example')) ]
+
+ install_files = storage_dirs + conf_files
